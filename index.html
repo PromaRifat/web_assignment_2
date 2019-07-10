@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>List page</title>
+        <link href = "style.css" rel ="stylesheet">
+        <script src = "touristPlaceClass.js"></script>
+        <script src = "main.js"></script>
+    </head>
+    <body onload=" showPlaces();">
+        <div id = "list_container">
+            <div id = "search_box_container">
+                 <input type="text" id = "search_box" placeholder = "Enter name to search">
+            </div>
+            <table id = "place_list">
+                    <tr id = "table_header">
+                        <th>NAME</th>
+                        <th>ADDRESS</th>
+                        <th>
+                            RATING 
+                            <select id = "sort">
+                                <option value = "null"></option>
+                                <option value = "asc">"ASC"</option>
+                                <option value = "dsc">"DESC"</option>
+                                <option value = "none">"NONE"</option>
+                            </select>
+                        </th>
+                        <th>PICTURE</th>
+                        <th>ACTION</th>
+                    </tr>
+                    <tr id = "lalbaghFort">
+                        <td>Lalbagh Fort</td>
+                        <td>Lalbagh</td>
+                        <td>1</td>
+                        <td><img src = "images/lalbaghfort.jpg" alt = "Lalbagh Fort"></td>
+                        <td>
+                            <div class = "action_button_container">
+                                <button type="button" class = "update_btn" onclick = "updatePlace()">Update</button>
+                                <button type="button" class = "delete_btn" onclick = "deletePlace(this)">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id = "mahasthangor">
+                        <td>Mahasthan Gor</td>
+                        <td>Comilla</td>
+                        <td>1</td>
+                        <td><img src = "images/mahasthangor.jpg" alt = "Mahasthan Gor"></td>
+                        <td>
+                            <div class = "action_button_container">
+                                <button type="button" class = "update_btn" onclick = "updatePlace()">Update</button>
+                                <button type="button" class = "delete_btn" onclick = "deletePlace(this)">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+            </table>
+            <button type = "button" id = "new_place_btn" onclick = "createPageShow()">Create New Tourist Place</button>
+        </div>
+
+        <div id = "information_container" align = "center">
+            <h2>Add a New Tourist Place</h2>
+                <form onsubmit = "return false">
+                    <div class = "element_container">
+                        <label for = "place_name">Name:</label>
+                        <input type = "text" id = "place_name" name = "place_name" required>
+                    </div>
+                    <div class = "element_container">
+                        <label for = "place_address">Address:</label>
+                        <input type = "text" id = "place_address" name = "place_address" required>
+                    </div>
+                    <div class = "element_container">
+                        <label for = "place_rating">Rating:</label>
+                        <select id = "place_rating" name = "place_rating">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                        </select>
+                        
+                    </div>
+                    <div class = "element_container"> 
+                        <label for = "place_type">Type:</label>
+                        <select id = "place_type" name = "place_type">
+                                <option value="beach">Beach</option>
+                                <option value="hills">Hills</option>
+                                <option value="fountains">Fountains</option>
+                                <option value="landmark">Landmark</option>
+                        </select>
+                    </div>
+                    <div class = "element_container">
+                        <label>Picture:</label>
+                        <input type = "file" id = "place_picture" name = "place_picture" accept="image/*" >
+                    </div>
+                    <div id = "button_container">
+                        <button type = "submit" id = "submit" onclick = "newPlace()">Submit</button>
+                        <button type = "reset" id = "reset">Reset</button>
+                    </div>
+                    <div id = "list_link_container">
+                            <a onclick = "listPageShow()" id = "list_link"><u>Back to Tourist Place List</u></a>
+                    </div> 
+                </form>
+    
+            </div>
+        
+    </body>
+</html>
