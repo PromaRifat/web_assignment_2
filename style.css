@@ -183,5 +183,19 @@
      background: black;
      border: none;
      color:white;
+     font-size: 70%;
      outline: none;
+ }
+
+ #change_pic_btn{
+    margin-left: 3%;
+    margin-right: 2%;
+    margin-top: 2%;
+    height: 0.5%;
+    width: 10%;
+    border-radius: 6px;
+    background-color:#20B2AA; 
+    color: white;
+    font-size: 95%;
+    outline: none;
  }
