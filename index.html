@@ -4,13 +4,14 @@
         <meta charset = "utf-8">
         <title>List page</title>
         <link href = "style.css" rel ="stylesheet">
-        <script src = "touristPlaceClass.js"></script>
-        <script src = "main.js"></script>
+        <script src = "Javascript/touristPlaceClass.js" defer></script>
+        <script src = "Javascript/eventRegister.js" defer></script>
+        <script src = "Javascript/main.js" defer></script>
     </head>
-    <body onload=" showPlaces();">
+    <body>
         <div id = "list_container">
             <div id = "search_box_container">
-                 <input type="text" id = "search_box" placeholder = "Enter name to search" onkeyup="searchPlace()">
+                 <input type="text" id = "search_box" placeholder = "Enter name to search">
             </div>
             <table id = "place_list">
                     <tr id = "table_header">
@@ -18,7 +19,7 @@
                         <th>ADDRESS</th>
                         <th>
                             RATING 
-                            <select id = "sort" onchange = "sort(this.value)">
+                            <select id = "sort">
                                 <option value = "null"></option>
                                 <option value = "asc">ASC</option>
                                 <option value = "dsc">DESC</option>
@@ -29,7 +30,7 @@
                     </tr>
                    
             </table>
-            <button type = "button" id = "new_place_btn" onclick = "createPageShow()">Create New Tourist Place</button>
+            <button type = "button" id = "new_place_btn">Create New Tourist Place</button>
         </div>
 
         <div id = "information_container" align = "center">
@@ -68,11 +69,11 @@
                         <input type = "file" id = "place_picture" name = "place_picture" accept="image/*" >
                     </div>
                     <div id = "button_container">
-                        <button type = "submit" id = "submit" onclick = "newPlace()">Submit</button>
+                        <button type = "submit" id = "submit">Submit</button>
                         <button type = "reset" id = "reset">Reset</button>
                     </div>
                     <div id = "list_link_container">
-                            <a onclick = "listPageShow()" id = "list_link"><u>Back to Tourist Place List</u></a>
+                            <a id = "list_link"><u>Back to Tourist Place List</u></a>
                     </div> 
                 </form>
     
